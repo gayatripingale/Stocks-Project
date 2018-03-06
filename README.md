@@ -17,7 +17,7 @@
    How can we attempt to predict future stock beheviour?
 
 
-5. Data sources or Data Sets to be Used  : Data from Morigstar
+5. Data sources or Data Sets to be Used  : Data from Mornigstar
 
 6. APIs to be consumed (if any): May be twitter if we do the Social media impact on stock price.
 
