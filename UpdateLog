@@ -1,4 +1,29 @@
 Stock Project Update Log
+Dependancies:
 
+1. matplotlib
+2. morningstar to pull data
+3. datetime as dt
+4. FAANG: Facebook, Amazon, Apple, Netflix, Google stocks dat
+5. pandas_datareader.data as web   #to read data from web
+6. json
+7 style.use('ggplot')
+75. Type of plots/graphs: Our choice. 
+￼￼￼￼￼￼￼￼￼
+Sample code that I did the other day:
+```import datetime as dt
+import matplotlib.pyplot as plt
+from matplotlib import style
+import pandas as pd
+import pandas_datareader.data as web
+import json
+import numpy as np
 
-- Created Update Log (Jaejun Shim)
+start = dt.datetime(2017, 1, 1)
+end = dt.datetime(2017, 12, 31)
+
+df = web.DataReader('IBM', "morningstar", start, end)
+#df.head()
+df.to_csv("IBM.csv")
+df1 = pd.read_csv("IBM.csv",parse_dates = True, index_col=0)
+```
