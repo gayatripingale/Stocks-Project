@@ -1,7 +1,8 @@
 Stock Project Update Log
 
 Stock Analysis for the year 2017
-Please go through thte documentaion of Morning star to see the commands. I have not seen thoroughly yet. I will do it today.
+Please go through the documentaion of Morning star to see the commands. I have not seen thoroughly yet. I will do it today.
+http://pandas-datareader.readthedocs.io/en/latest/remote_data.html#remote-data-morningstar
 
 Dependancies:
 
