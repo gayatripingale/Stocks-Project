@@ -12,30 +12,9 @@ Dependancies:
 5. pandas_datareader.data as web   #to read data from web
 6. json
 7 style.use('ggplot')
-75. Type of plots/graphs: Our choice. 
+8. Type of plots/graphs: Our choice. 
 ￼￼￼￼￼￼￼￼￼
-Sample code that I did the other day:
-```import datetime as dt
-import matplotlib.pyplot as plt
-from matplotlib import style
-import pandas as pd
-import pandas_datareader.data as web
-import json
-import numpy as np
 
-start = dt.datetime(2017, 1, 1)
-end = dt.datetime(2017, 12, 31)
-
-df = web.DataReader('IBM', "morningstar", start, end)
-#df.head()
-df.to_csv("IBM.csv")
-df1 = pd.read_csv("IBM.csv",parse_dates = True, index_col=0)
-
-style.use('ggplot')
-df.plot()
-plt.show()
-```
-_____________________________
 ##Tasks ##
 
 Problem: Solution/Represntaion in the form of:
@@ -66,3 +45,4 @@ Problem: Solution/Represntaion in the form of:
      sns.corrplot(rets_df.dropna(),annot=True)
   
   # 6 How much value do we put at risk by investing in a particular stock?
+      We will figure it out in couple of day
