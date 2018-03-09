@@ -46,4 +46,4 @@ Problem: Solution/Represntaion in the form of:
      sns.corrplot(rets_df.dropna(),annot=True)
   
   # 6 How much value do we put at risk by investing in a particular stock?
-      We will figure it out in couple of day
+      We will figure it out latter.
