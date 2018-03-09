@@ -64,4 +64,5 @@ Problem: Solution/Represntaion in the form of:
      sns.pairplot(rets_df.dropna())
      sns.jointplot('GOOG','AAPL',rets_df,kind='scatter') # seaborn libraries
      sns.corrplot(rets_df.dropna(),annot=True)
-     
+  
+  # 6 How much value do we put at risk by investing in a particular stock?
