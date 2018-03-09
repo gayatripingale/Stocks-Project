@@ -10,7 +10,8 @@ Dependancies:
 1. matplotlib
 2. morningstar to pull data
 3. datetime as dt
-4. FAANG: Facebook, Amazon, Apple, Netflix, Google stocks dat
+4. FAANG stokcs: Facebook, Amazon, Apple, Netflix, Google 
+   Ticker symbol: FB, AMZN, APPL, NFLX, GOOGL
 5. pandas_datareader.data as web   #to read data from web
 6. json
 7 style.use('ggplot')
@@ -18,33 +19,37 @@ Dependancies:
 ￼￼￼￼￼￼￼￼￼
 
 ##Tasks ##
-Ticker symbol for th stocks above: FB, AMZN, APPL, NFLX, GOOGL
 
-Problem: Solution/Represntaion in the form of:
-
-  #1 What’s the change in stock’s price over time? : DataFrame and Graph( Month Vs stock Price) 
-  #2 What is the change in volume in the year 2017: Graph
+Problem: #1 What’s the change in stock’s price over time? 
+          Expectation/To Do: DataFrame and Graph( Month Vs stock Price) 
+          
+  #2 What is the change in volume in the year 2017: 
+  Expectation: Graph
   Note: We shopuld do this 2-D color coded graph for each stock. So, toal 5 graphs for this part
-  # What was the daily return average of a stock?: 
-      Fot yhoofinance the command for this is: `df.pct_change()`. Don't know for morningstar. Will have ot see the documentation.
+   
+  #3 What was the daily return average of a stock?
+   Exp: For yhoofinance the command for this is: `df.pct_change()`. 
+        Don't know for morningstar. Will have ot see the documentation.
+        
   #3 What was the moving average(MA)of various stocks?
-      Need to create one col for MA for 10, 20, 50 days.
-      AAPL[column_name] = AAPL['Adj Close'].rolling(window=ma,center=False).mean() # We will use soemthing like this. Don't know for MS(Mrning Star)
-      Plots/subplosts for this.
+    Exp:  Need to create one col for MA for 10, 20, 50 days.
+         AAPL[column_name] = AAPL['Adj Close'].rolling(window=ma,center=False).mean() # We will use soemthing like this. Don't know for MS(Mrning Star)
+         Plots/subplosts for this.
+         
   #4 What was the daily return average of a stock?    
-        AAPL['Daily Return'] = AAPL['Adj Close'].pct_change() # from Yahoofinance. check morningstar
+    Exp:  AAPL['Daily Return'] = AAPL['Adj Close'].pct_change() # from Yahoofinance. check morningstar
         sns.distplot(AAPL['Daily Return'].dropna(),bins=100,color='red')
         AAPL['Daily Return'].plot(figsize=(14,5),legend=True,linestyle='--',marker='o')
   
   #5 What was the correlation between daily returns of different stocks?
-     #Reading just the 'Adj Close' column 
-     close_df = DataReader(tech_list,'yahoo',start,end)['Adj Close']
-     create df with date as index and stock-names as columnss
-     Graphs:
-     We should try the following graphs:
-     sns.pairplot(rets_df.dropna())
-     sns.jointplot('GOOG','AAPL',rets_df,kind='scatter') # seaborn libraries
-     sns.corrplot(rets_df.dropna(),annot=True)
+    Exp: Create/add 'Adj Close' column 
+     e.g.: close_df = DataReader(tech_list,'yahoo',start,end)['Adj Close']
+           create df with date as index and stock-names as columnss
+           Graphs:
+           We should try the following graphs:
+           sns.pairplot(rets_df.dropna())
+          sns.jointplot('GOOG','AAPL',rets_df,kind='scatter') # seaborn libraries
+          sns.corrplot(rets_df.dropna(),annot=True)
   
   # 6 How much value do we put at risk by investing in a particular stock?
-      We will figure it out latter.
+     Exp:  We will figure it out latter.
