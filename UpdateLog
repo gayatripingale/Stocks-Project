@@ -1,4 +1,8 @@
 Stock Project Update Log
+
+Stock Analysis for the year 2017
+Please go through thte documentaion of Morning star to see the commands. I have not seen thoroughly yet. I will do it today.
+
 Dependancies:
 
 1. matplotlib
@@ -26,4 +30,38 @@ df = web.DataReader('IBM', "morningstar", start, end)
 #df.head()
 df.to_csv("IBM.csv")
 df1 = pd.read_csv("IBM.csv",parse_dates = True, index_col=0)
+
+style.use('ggplot')
+df.plot()
+plt.show()
 ```
+_____________________________
+##Tasks ##
+
+Problem: Solution/Represntaion in the form of:
+
+  #1 What’s the change in stock’s price over time? : DataFrame and Graph( Month Vs stock Price) 
+  #2 What is the change in volume in the year 2017: Graph
+  Note: We shopuld do this 2-D color coded graph for each stock. So, toal 5 graphs for this part
+  # What was the daily return average of a stock?: 
+      Fot yhoofinance the command for this is: `df.pct_change()`. Don't know for morningstar. Will have ot see the documentation.
+  #3 What was the moving average(MA)of various stocks?
+      Need to create one col for MA for 10, 20, 50 days.
+      AAPL[column_name] = AAPL['Adj Close'].rolling(window=ma,center=False).mean() # We will use soemthing like this. Don't know for MS(Mrning Star)
+      Plots/subplosts for this.
+  #4 What was the daily return average of a stock?    
+        AAPL['Daily Return'] = AAPL['Adj Close'].pct_change() # from Yahoofinance. check morningstar
+        sns.distplot(AAPL['Daily Return'].dropna(),bins=100,color='red')
+        AAPL['Daily Return'].plot(figsize=(14,5),legend=True,linestyle='--',marker='o')
+  
+  #5 What was the correlation between daily returns of different stocks?
+     #Reading just the 'Adj Close' column 
+     close_df = DataReader(tech_list,'yahoo',start,end)['Adj Close']
+     create df with date as index and stock-names as cols
+     Graphs:
+     check out: https://seaborn.pydata.org/generated/seaborn.set_style.html
+     We should try the following graphs:
+     sns.pairplot(rets_df.dropna())
+     sns.jointplot('GOOG','AAPL',rets_df,kind='scatter') # seaborn libraries
+     sns.corrplot(rets_df.dropna(),annot=True)
+     
